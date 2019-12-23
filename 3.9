@@ -1,0 +1,73 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class 5E_bank{
+private:
+int account;	
+public:	
+5E_bank(int a){    //constructor		
+account = a;		
+cout<<"\n WELCOME TO 5E BANK\n ";	
+menu();
+}	
+widraw(){ //withdraw ammount function	
+cout<<"please enter ammount: ";	
+int a;	
+cin>>a;
+if(a>=500 && a<=25000){	 	
+account = account - a;		
+cout<<"you have witdraw a ammount of " <<a<<" from your account\n"
+menu();		
+}else {			
+cout<<"\n ERROR!"<<endl;			
+cout<<"PLEASE ENTER VALUE BETWEEN 500 TO 25000";			
+menu();
+}	
+}	
+deposit(){ //deposit		 
+cout<<"please enter amount: ";	 
+int a;	 
+cin>>a;
+if(a>=500 && a<=500000)
+{	 
+account=account + a;	
+cout<<"you have deposit a amount of " <<a<<" to your account\n";		
+menu();	
+}else {			
+cout<<"\n ERROR!"<<endl;		
+cout<<"PLEASE ENTER VALUE BETWEEN 500 TO 500000";	
+menu();		
+}
+}
+check_bal(){	
+cout<<"your account balance is: "<<account<<endl;	
+}	
+menu(){		
+int a; 
+cout<<"\n1.CHECK BALANCE\n2.DEPOSIT CASH\n3.WIDRAW CASH";		
+cin>>a;
+if(a==1){		
+check_bal();			
+menu();		
+}else if(a==2){		
+deposit();			
+check_bal();		
+menu();
+}else if(a==3){		
+widraw();			
+check_bal();			
+menu();
+
+			cout<<"INVALID CHOICE!";		
+      cout<<"SELECT VALUE FROM MENU";		
+      menu();		
+      }		
+      }
+   };
+
+#include"5E_bank.cpp"
+using namespace std; 
+main(){	
+5E_bank bank(500);	
+bank.menu();	
+}
